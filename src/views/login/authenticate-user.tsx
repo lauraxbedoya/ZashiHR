@@ -1,7 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import authenticateUser from "../../api/gql/mutation/authenticate-user-mutation";
 import Login from "../../components/login";
 import storage, { AUTH_TOKEN } from "../../utils/storage";
@@ -14,7 +13,6 @@ const UserLogin = () => {
   });
   const [ loginUserGQL ] = useMutation(authenticateUser);
 	const dispatch = useDispatch();
-  let navigate = useNavigate();
 
   const handleInputChange = (e: any) => {
 		setValues(
@@ -39,16 +37,21 @@ const UserLogin = () => {
       if (data.authenticate.token) {
 				storage.save(AUTH_TOKEN, data.authenticate.token);
 				dispatch({ type: 'STORE_USER_INFO', payload: data.authenticate.user});
-				navigate('/company_login');
-			}
-
+				// navigate('/company_login');
+			};
     } catch(err) {
       alert(err)
     }
   };
 
+  const handleLogout = () => {
+    storage.remove(AUTH_TOKEN);
+    dispatch({ type: 'REMOVE_USER_INFO'});
+  }
+
   return(
     <div>
+      <button onClick={handleLogout}>Logout</button>
       <Login
         user="User"
         emailValue={values.email}

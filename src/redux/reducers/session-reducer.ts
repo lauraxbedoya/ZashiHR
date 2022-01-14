@@ -11,8 +11,13 @@ const sessionReducer = (state = initialState, action: ActionType) => {
         ...state,
         userInfo: action.payload,
       };
+    case 'REMOVE_USER_INFO': 
+      return {
+        ...state,
+        userInfo: null,
+      }
     default:
-      break;
+      return state;
   }
 };
 

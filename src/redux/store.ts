@@ -1,6 +1,9 @@
 import { createStore, combineReducers } from 'redux';
+import sessionReducer from './reducers/session-reducer';
 
-const reducers = combineReducers({});
+const reducers = combineReducers({
+  sessions: sessionReducer,
+});
 
 const store = createStore(reducers);
 

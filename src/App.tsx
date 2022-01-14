@@ -5,17 +5,20 @@ import { ApolloProvider } from '@apollo/client';
 import apolloClient from './api/apollo-client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from './AppRouter';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './styles/theme';
 
 
-const App = () => {
-  
+const App = () => {  
   return (
     <ReduxProvider store={store}>
-      <ApolloProvider client={apolloClient}>
-        <Router>
-          <AppRouter />
-        </Router>
-      </ApolloProvider>
+      <ThemeProvider theme={theme}>
+        <ApolloProvider client={apolloClient}>
+          <Router>
+            <AppRouter />
+          </Router>
+        </ApolloProvider>
+      </ThemeProvider>
     </ReduxProvider>
   );
 };

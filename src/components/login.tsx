@@ -1,5 +1,6 @@
 import { Typography } from "@material-ui/core";
 import { Email, Lock } from '@material-ui/icons';
+import { Container, StyledMainTitle } from "../styles/common.styles";
 import MainButton from "./main-button";
 
 type LoginType = {
@@ -12,9 +13,9 @@ type LoginType = {
 
 const Login = ({ user, emailValue, passwordValue, onChange, onLogin }: LoginType) => {
   return(
-    <div>
+    <Container>
       <div>
-        <Typography variant="h5">Member Login</Typography>
+        <StyledMainTitle>Member Login</StyledMainTitle>
         <Typography variant="h6">{user}</Typography>
         <div>
           <Email />
@@ -52,7 +53,7 @@ const Login = ({ user, emailValue, passwordValue, onChange, onLogin }: LoginType
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
