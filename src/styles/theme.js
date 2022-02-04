@@ -1,10 +1,11 @@
-import styled from "styled-components";
-
 export const theme = {
   colors: {
-    main: "#283618",
+    main: "#ffffff",
     primary: "#bc6c25",
-    secondary: "#606c38",
+    secondary: "#79737A",
+  },
+  text: {
+    main: "#000000",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

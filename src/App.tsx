@@ -1,7 +1,7 @@
 import './App.css';
-import { Provider as ReduxProvider } from 'react-redux';
+import { Provider as ReduxProvider, useDispatch } from 'react-redux';
 import store from './redux/store';
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider, useApolloClient } from '@apollo/client';
 import apolloClient from './api/apollo-client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from './AppRouter';
@@ -9,7 +9,8 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 
 
-const App = () => {  
+const App = () => {
+
   return (
     <ReduxProvider store={store}>
       <ThemeProvider theme={theme}>

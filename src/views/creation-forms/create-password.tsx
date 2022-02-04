@@ -47,7 +47,7 @@ const CreatePassword = () => {
       variables: { token: token }
     });
 
-    if(!data.isUserInvitationValid) {
+    if(data.isUserInvitationValid) {
       navigate("/request_invalid");
     } else return
   };
@@ -87,6 +87,7 @@ const CreatePassword = () => {
       <MainButton
         text="Confirm Password"
         onClick={handleSendPassword}
+        disabled={false}
       />
     </Container>
   );

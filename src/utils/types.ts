@@ -4,13 +4,39 @@ export type ActionType = {
 };
 
 export type UserType = {
-  birthDate: Date,
+  birthDate: string,
   email: string,
-  firtsName: string,
+  firstName: string,
   gender: string,
-  hireDate: Date,
+  hireDate: string,
   insertedAt: string,
   lastName: string,
   maritalStatus: string,
   position: string
-}
+};
+
+export type SettingsType = {
+  logo: string,
+  hideGender: boolean,
+  hideMaritalStatus: boolean,
+  hideSalary: boolean,
+  extraTimeOff: number,
+  invitationExpire: number
+};
+
+export type AppSettingsType = {
+  id: string,
+  name: string,
+  value: string,
+  type: string,
+  description: string,
+};
+
+export type UserAddressType = {
+  city: string,
+  country: string,
+  main: string,
+  secondary: string,
+  state: string,
+  zipCode: string,
+};

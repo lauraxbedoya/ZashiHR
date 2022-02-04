@@ -44,14 +44,8 @@ const UserLogin = () => {
     }
   };
 
-  const handleLogout = () => {
-    storage.remove(AUTH_TOKEN);
-    dispatch({ type: 'REMOVE_USER_INFO'});
-  }
-
   return(
     <div>
-      <button onClick={handleLogout}>Logout</button>
       <Login
         user="User"
         emailValue={values.email}

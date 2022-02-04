@@ -79,6 +79,7 @@ const CreateUser = () => {
       <MainButton
         text="Create"
         onClick={handleSend}
+        disabled={false}
       />
     </Container>
   );
